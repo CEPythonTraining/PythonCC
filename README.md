@@ -24,7 +24,7 @@ The `PythonCC` cookiecutter template helps you quickly set up a new Python proje
 1. **Run Cookiecutter**: Use the `cookiecutter` command followed by the URL of the `PythonCC` template repository. For example:
 
     ```bash
-    cookiecutter https://github.com/grove825/PythonCC.git
+    cookiecutter https://github.com/CEPythonTraining/PythonCC.git
     ```
 
 2. **Provide Project Details**: You will be prompted to enter various details about your project, such as the project name, author name, and other configurations. Fill in the details as required.
