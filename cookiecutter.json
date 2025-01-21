@@ -1,0 +1,28 @@
+{
+    "full_name": "Erik Gemini",
+    "email": "erik.gemini@capgemini.com",
+    "project_name": "Python Boilerplate",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
+    "version": "0.1.0",
+    "docs": "y",
+    "copyright": "Capgemini Engineering",
+    "build_system": [
+        "GitHub Actions",
+        "Jenkins",
+        "GitLab CI",
+        "No Build System"
+    ],
+    "open_source_license": [
+        "MIT license",
+        "BSD license",
+        "ISC license",
+        "Apache Software License 2.0",
+        "GNU General Public License v3",
+        "Not open source"
+    ],
+    "__project_folder_name": "{{ cookiecutter.project_name.replace(' ', '') }}",
+    "_copy_without_render": [
+        ".github"
+    ]
+}
