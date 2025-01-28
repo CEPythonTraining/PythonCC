@@ -17,6 +17,7 @@ release = "{{ cookiecutter.version }}"
 extensions = [
     "sphinx_copybutton",
     "sphinx_inline_tabs",
+    "sphinxcontrib.mermaid",
 ]
 
 templates_path = ["_templates"]
