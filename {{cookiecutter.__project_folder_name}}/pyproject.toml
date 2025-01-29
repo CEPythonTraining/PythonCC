@@ -135,7 +135,11 @@ target-version = "py312"
 
 [tool.ruff.lint]
 select = ["ALL"]
-ignore = ["ANN101", "D203", "D213", "COM812", "ISC001"]
+ignore = [
+    "ANN101",  # missing-type-self
+    "D203",  # incorrect-blank-line-before-class
+    "D213",  # multi-line-summary-second-line
+]
 
 # Allow fix for all enabled rules (when `--fix`) is provided.
 fixable = ["ALL"]
@@ -146,8 +150,14 @@ dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
 
 [tool.ruff.lint.per-file-ignores]
-"**/__init__.py"= ["D104"]
-"tests/**"= ["A", "ANN", "D", "PLR2004", "PT", "S101"]
+"**/__init__.py"= ["D104"]  # undocumented-public-package
+"tests/**"= [
+    "A",  # flake8-builtins
+    "ANN",  # flake8-annotations
+    "D",  # pydocstyle
+    "PLR2004",  # magic-value-comparison
+    "S101",  # assert
+]
 
 [tool.ruff.lint.isort]
 order-by-type = true
