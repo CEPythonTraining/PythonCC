@@ -32,6 +32,7 @@ dependencies = ["uv"]
 
 [dependency-groups]
 dev = [
+    "black",
     "build",
     "mypy",
     "pre-commit",
