@@ -53,7 +53,7 @@ The `PythonCC` cookiecutter template helps you quickly set up a new Python proje
 6. **Install Dependencies**: Install any dependencies specified in the `requirements-dev.txt` file:
 
     ```bash
-    pip install -r requirements.txt
+    pip install .[all]
     ```
 
 7. **Start Developing**: You are now ready to start developing your Python project. Open the project in your favorite IDE and begin coding.
@@ -72,4 +72,5 @@ git add .
 git commit -m "Initial commit"
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-pip install -r requirements-dev.txt
+pip install .[all]
+```

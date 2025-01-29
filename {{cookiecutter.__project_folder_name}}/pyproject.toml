@@ -28,7 +28,32 @@ classifiers = [
     {% endif -%}
     "Operating System :: OS Independent",
 ]
-dependencies = []
+dependencies = ["uv"]
+
+[dependency-groups]
+dev = [
+    "build",
+    "mypy",
+    "pre-commit",
+    "ruff",
+    "twine",
+]
+docs = [
+    "furo",
+    "sphinx",
+    "sphinx-copybutton",
+    "sphinx-inline-tabs",
+    "sphinxcontrib-mermaid",
+    "pre-commit",
+
+]
+test = [
+    "coverage[toml]",
+    "pre-commit",
+    "pytest",
+]
+all = [{include-group = "dev"}, {include-group = "docs"}, {include-group = "test"}]
+
 
 [tool.setuptools.packages.find]
 where = ["."]
@@ -40,6 +65,7 @@ firewall_block = "{{ cookiecutter.project_slug }}.main:main"
 [tool.coverage.run]
 branch = true
 omit = [
+    "*site-packages*",
     # omit tests folder
     "*/tests/*",
     "*/testing/*",
@@ -65,6 +91,8 @@ exclude_also = [
     ]
 
 ignore_errors = true
+show_missing = true
+
 
 [tool.ruff]
 # Exclude a variety of commonly ignored directories.
@@ -120,6 +148,15 @@ dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 [tool.ruff.lint.per-file-ignores]
 "**/__init__.py"= ["D104"]
 "tests/**"= ["A", "ANN", "D", "PLR2004", "PT", "S101"]
+
+[tool.ruff.lint.isort]
+order-by-type = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.black]
+line-length = 120
 
 [tool.mypy]
 exclude = [
