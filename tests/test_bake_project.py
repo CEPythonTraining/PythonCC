@@ -113,6 +113,7 @@ def test_bake_pyproject_project(cookies):
             in pyproject_toml__read
         )
         assert 'name = "python_boilerplate"' in pyproject_toml__read
+        assert 'where = ["python_boilerplate"]' in pyproject_toml__read
         assert 'version = "0.1.0"' in pyproject_toml__read
         description = (
             'description = "Python Boilerplate contains all the boilerplate '

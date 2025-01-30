@@ -30,12 +30,14 @@ classifiers = [
 ]
 dependencies = ["uv"]
 
-[dependency-groups]
+[project.optional-dependencies]
 dev = [
     "black",
     "build",
+    "coverage[toml]",
     "mypy",
     "pre-commit",
+    "pytest",
     "ruff",
     "twine",
 ]
@@ -48,17 +50,9 @@ docs = [
     "pre-commit",
 
 ]
-test = [
-    "coverage[toml]",
-    "pre-commit",
-    "pytest",
-]
-all = [{include-group = "dev"}, {include-group = "docs"}, {include-group = "test"}]
-
 
 [tool.setuptools.packages.find]
-where = ["."]
-exclude = ["tests", "testing"]
+where = ["{{ cookiecutter.project_slug }}"]
 
 [project.scripts]
 firewall_block = "{{ cookiecutter.project_slug }}.main:main"
